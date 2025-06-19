@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Datapengeluaran;
-use App\Models\Jenispengeluaran;
+use App\Models\JenisPengeluaran;
 use Illuminate\Http\Request;
 
 class PengeluaranController extends Controller
@@ -11,7 +11,7 @@ class PengeluaranController extends Controller
     public function index()
     {
         $datapengeluaran = Datapengeluaran::all();
-        $jenisPengeluaran = Jenispengeluaran::all();
+        $jenisPengeluaran = JenisPengeluaran::all();
         return view('pemilik.datapengeluaran.index', compact('datapengeluaran', 'jenisPengeluaran'));
     }
 
@@ -30,7 +30,7 @@ class PengeluaranController extends Controller
             // Add id_user to validated data
             $validated['id_user'] = auth()->id();
 
-            $pengeluaran = DataPengeluaran::create($validated);
+            $pengeluaran = Datapengeluaran::create($validated);
 
             if($request->ajax()) {
                 return response()->json([
@@ -108,7 +108,7 @@ class PengeluaranController extends Controller
             'nama_pengeluaran' => 'required|string|max:255',
         ]);
 
-        Jenispengeluaran::create($validated);
+        JenisPengeluaran::create($validated);
 
         if($request->ajax()) {
             return response()->json(['success' => true]);
@@ -118,7 +118,7 @@ class PengeluaranController extends Controller
 
     public function destroyJenis($id)
     {
-        $jenis = Jenispengeluaran::findOrFail($id);
+        $jenis = JenisPengeluaran::findOrFail($id);
 
         try {
             // Check if jenis is being used
