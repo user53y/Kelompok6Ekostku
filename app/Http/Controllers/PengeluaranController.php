@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DataPengeluaran;
-use App\Models\JenisPengeluaran;
+use App\Models\Datapengeluaran;
+use App\Models\Jenispengeluaran;
 use Illuminate\Http\Request;
 
 class PengeluaranController extends Controller
 {
     public function index()
     {
-        $datapengeluaran = DataPengeluaran::all();
-        $jenisPengeluaran = JenisPengeluaran::all();
+        $datapengeluaran = Datapengeluaran::all();
+        $jenisPengeluaran = Jenispengeluaran::all();
         return view('pemilik.datapengeluaran.index', compact('datapengeluaran', 'jenisPengeluaran'));
     }
 
@@ -54,14 +54,14 @@ class PengeluaranController extends Controller
 
     public function edit($id)
     {
-        $datapengeluaran = DataPengeluaran::findOrFail($id);
+        $datapengeluaran = Datapengeluaran::findOrFail($id);
         return response()->json($datapengeluaran);
     }
 
     public function update(Request $request, $id)
     {
         try {
-            $datapengeluaran = DataPengeluaran::findOrFail($id);
+            $datapengeluaran = Datapengeluaran::findOrFail($id);
 
             $validated = $request->validate([
                 'id_jenis' => 'required|exists:jenispengeluaran,id',
@@ -91,11 +91,11 @@ class PengeluaranController extends Controller
 
     public function show($id)
     {
-        $datapengeluaran = DataPengeluaran::findOrFail($id);
+        $datapengeluaran = Datapengeluaran::findOrFail($id);
         return response()->json($datapengeluaran);
     }
 
-    public function destroy(DataPengeluaran $datapengeluaran)
+    public function destroy(Datapengeluaran $datapengeluaran)
     {
         $datapengeluaran->delete();
         return redirect()->route('tampil-pengeluaran')->with('success', 'Pengeluaran berhasil dihapus');
@@ -108,7 +108,7 @@ class PengeluaranController extends Controller
             'nama_pengeluaran' => 'required|string|max:255',
         ]);
 
-        JenisPengeluaran::create($validated);
+        Jenispengeluaran::create($validated);
 
         if($request->ajax()) {
             return response()->json(['success' => true]);
@@ -118,11 +118,11 @@ class PengeluaranController extends Controller
 
     public function destroyJenis($id)
     {
-        $jenis = JenisPengeluaran::findOrFail($id);
+        $jenis = Jenispengeluaran::findOrFail($id);
 
         try {
             // Check if jenis is being used
-            $isUsed = $jenis->dataPengeluaran()->exists();
+            $isUsed = $jenis->datapengeluaran()->exists();
 
             if($isUsed) {
                 return response()->json([
@@ -148,7 +148,7 @@ class PengeluaranController extends Controller
     public function bulkDelete(Request $request)
     {
         try {
-            DataPengeluaran::whereIn('id', $request->ids)->delete();
+            Datapengeluaran::whereIn('id', $request->ids)->delete();
             return response()->json(['success' => true]);
         } catch (\Exception $e) {
             return response()->json(['success' => false], 500);
