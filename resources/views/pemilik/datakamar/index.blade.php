@@ -4,7 +4,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 
-
 @section('content')
 <div class="container-fluid">
     <div class="card shadow-sm">
@@ -360,9 +359,14 @@
 
 
 @push('scripts')
-<scipt src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script>
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 
 $(document).ready(function() {
     if ($.fn.DataTable.isDataTable('#dataTable')) $('#dataTable').DataTable().destroy();
