@@ -1,5 +1,10 @@
 @extends('layouts.dashboard')
 
+@push('header')
+<meta name="csrf-token" content="{{ csrf_token() }}">
+@endpush
+
+
 @section('content')
 <div class="container-fluid">
     <div class="card shadow-sm">
