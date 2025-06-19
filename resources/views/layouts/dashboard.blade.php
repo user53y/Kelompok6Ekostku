@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - Kos Bu Tik</title>
-
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css" rel="stylesheet">
-
     <!-- DataTables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-
     <!-- Custom Styles -->
     <link href="{{ asset('template/css/dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('template/css/profile.css') }}" rel="stylesheet">
@@ -25,7 +22,7 @@
     <link href="{{ asset('template/css/components/sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('template/css/components/booking.css') }}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    
     <style>
         .notification-dropdown {
             display: none;
@@ -39,28 +36,60 @@
             z-index: 1000;
             margin-top: 10px;
         }
-
         .notification-dropdown.show {
             display: block;
             animation: fadeIn 0.2s ease-in-out;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .notification-actions {
             display: flex !important;
             gap: 8px;
             margin-top: 8px;
         }
-
         .notification-actions .btn {
             min-width: 80px;
             font-size: 0.95rem;
         }
     </style>
+    
+    <script>
+    // Vanilla JavaScript version - works without jQuery
+    (function() {
+        // Override XMLHttpRequest
+        const originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url, async, user, password) {
+            if (typeof url === 'string' && url.indexOf('http://') === 0) {
+                url = url.replace('http://', 'https://');
+            }
+            return originalOpen.call(this, method, url, async, user, password);
+        };
+        
+        // Override fetch if available
+        if (window.fetch) {
+            const originalFetch = window.fetch;
+            window.fetch = function(url, options) {
+                if (typeof url === 'string' && url.indexOf('http://') === 0) {
+                    url = url.replace('http://', 'https://');
+                }
+                return originalFetch.call(this, url, options);
+            };
+        }
+        
+        // jQuery ajaxPrefilter when jQuery is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.jQuery) {
+                jQuery.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+                    if (options.url && options.url.indexOf('http://') === 0) {
+                        options.url = options.url.replace('http://', 'https://');
+                    }
+                });
+            }
+        });
+    })();
+    </script>
 </head>
 
 <body>
