@@ -1,0 +1,40 @@
+/* Filter dropdown styles */
+.filter-dropdown {
+    min-width: 250px;
+}
+
+/* Table styles */
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.badge {
+    font-weight: 500;
+}
+
+.btn-group-sm > .btn {
+    padding: 0.25rem 0.5rem;
+}
+
+/* Card styles */
+.card {
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.card-header {
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+
+/* Input group styles */
+.input-group-text {
+    border-right: none;
+}
+
+.input-group .form-control:focus {
+    border-color: #dee2e6;
+    box-shadow: none;
+}

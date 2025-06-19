@@ -1,0 +1,146 @@
+html {
+    scroll-padding-top: 59.5px; /* Adds padding for fixed header */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+  }
+
+  body {
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    background-color: #222222;
+    color: #333;
+  }
+
+  header {
+    background-color: rgba(34, 34, 34, 0.7);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    height: 59.5px;
+  }
+
+  .navbar {
+    height: 59.5px;
+    padding: 0;
+  }
+
+  .navbar-brand {
+    font-weight: 600;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-weight: 600;
+    color: #ffffff !important;
+    font-size: 16px;
+  }
+
+  .nav-item:last-child {
+    margin-left: auto;
+  }
+
+  section {
+    padding: 100px 0;
+  }
+
+  .hero {
+    background-image: url("https://c.animaapp.com/dFX5qZAh/img/section.png");
+    background-size: cover;
+    background-position: center;
+    height: 591px;
+    position: relative;
+    color: white;
+    padding: 120px 0;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-primary {
+    background-color: #2c6f39;
+    border-color: #2c6f39;
+    border-radius: 15px;
+    padding: 0.75rem 2.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .btn-primary:hover {
+    background-color: #225a2e;
+    border-color: #225a2e;
+  }
+
+  .room-card {
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4caf50;
+  }
+
+  .feature-icon {
+    background-color: #e8f5e9;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+    font-size: 24px;
+  }
+
+  .cta-section {
+    background-color: #2c6f39;
+    border-radius: 21px;
+  }
+
+  .social-icon {
+    background-color: #333333;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+  }
+
+  .nav-link.active {
+    color: #2c6f39 !important;
+    font-weight: 600;
+  }
+
+  footer {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .copyright {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .section-header {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }

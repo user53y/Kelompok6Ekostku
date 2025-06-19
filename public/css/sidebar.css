@@ -1,0 +1,68 @@
+/* Add to existing sidebar styles */
+.sidebar-group {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-link.has-dropdown {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    color: rgba(255,255,255,0.8);
+    transition: all 0.3s ease;
+}
+
+.sidebar-link.has-dropdown:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.sidebar-link.has-dropdown i.bi-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.sidebar-link.has-dropdown[aria-expanded="true"] i.bi-chevron-down {
+    transform: rotate(-180deg);
+}
+
+.sub-link {
+    padding-left: 3rem !important;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.1);
+}
+
+.sub-link:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.collapse {
+    border-left: 1px solid rgba(255,255,255,0.1);
+    margin-left: 1.5rem;
+}
+
+/* Update existing sidebar styles */
+.left-sidebar {
+    background: linear-gradient(180deg, #1a2035 0%, #1a2035 100%);
+}
+
+.sidebar-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #00b894;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link:hover::before,
+.sidebar-link.active::before {
+    opacity: 1;
+}

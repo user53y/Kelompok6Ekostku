@@ -1,0 +1,20 @@
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f5f5f5;
+    --sidebar-bg: #333333;
+    --accent-color: #4CAF50;
+    --welcome-bg: #28303d;
+    --text-color: #333333;
+    --border-radius: 14px;
+    --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --transition-speed: 0.3s;
+    --sidebar-width: 215px;
+    --sidebar-width-mini: 65px;
+    --navbar-height: 70px;
+    --primary-color: #4A90E2;
+    --secondary-color: #f8f9fa;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+}

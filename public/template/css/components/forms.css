@@ -1,0 +1,107 @@
+/* Form Controls */
+.form-control {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border-color: #31302f;
+    box-shadow: 0 0 0 0.2rem rgba(49, 48, 47, 0.1);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+/* Select Styling */
+.form-select {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 0.6rem 2.25rem 0.6rem 1rem;
+    font-size: 0.95rem;
+    background-position: right 1rem center;
+}
+
+.form-select:focus {
+    border-color: #31302f;
+    box-shadow: 0 0 0 0.2rem rgba(49, 48, 47, 0.1);
+}
+
+/* Custom File Input */
+.custom-file-input {
+    position: relative;
+    width: 100%;
+}
+
+.custom-file-label {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+/* Preview Image */
+.preview-image {
+    max-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 0.5rem;
+}
+
+/* Multiple Image Upload */
+#imagePreviewContainer .position-relative {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#imagePreviewContainer .btn-danger {
+    padding: 0.25rem;
+    line-height: 1;
+    opacity: 0.9;
+}
+
+#imagePreviewContainer .btn-danger:hover {
+    opacity: 1;
+}
+
+/* Profile Form Controls */
+.profile-form-control {
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    border: 2px solid #E9ECEF;
+    transition: all 0.3s ease;
+}
+
+.profile-form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+/* Button Styling */
+.profile-btn {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+    background: #357ABD;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}

@@ -1,0 +1,284 @@
+/* Table Container */
+.table-responsive {
+    padding: 0 15px;
+    margin: 0;
+}
+
+/* Table Base */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    margin: 0;
+    font-size: 13px; /* Reduced font size */
+}
+
+/* Table Header */
+.table thead th {
+    background: #1a1a1a;
+    color: white;
+    padding: 10px; /* Reduced padding */
+    font-weight: 500;
+    font-size: 0.8rem;
+    border: none;
+    vertical-align: middle;
+}
+
+/* Header Border Radius - Only Top */
+.table thead tr th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.table thead tr th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* Checkbox Column */
+.table th:first-child {
+    width: 40px;
+    padding: 12px 8px !important;
+    text-align: center;
+}
+
+.table td:first-child {
+    width: 40px;
+    padding: 8px !important;
+    text-align: center;
+}
+
+.table td:first-child input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Table Rows */
+.table tbody tr {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.table tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Table Cells */
+.table tbody td {
+    padding: 8px 10px; /* Reduced padding */
+    vertical-align: middle;
+    border: none;
+    font-size: 13px;
+}
+
+/* Fixed Column Widths */
+.table th.col-number { width: 100px; }
+.table th.col-type { width: 130px; }
+.table th.col-size { width: 100px; }
+.table th.col-floor { width: 80px; }
+.table th.col-capacity { width: 100px; }
+.table th.col-price { width: 130px; }
+.table th.col-status { width: 100px; }
+.table th.col-actions { width: 120px; }
+
+/* Fixed Column Widths - Optimized */
+.table th:nth-child(2) { width: 100px; } /* No. Kamar */
+.table th:nth-child(3) { width: 120px; } /* Tipe */
+.table th:nth-child(4) { width: 80px; }  /* Luas */
+.table th:nth-child(5) { width: 60px; }  /* Lantai */
+.table th:nth-child(6) { width: 80px; }  /* Kapasitas */
+.table th:nth-child(7) { width: 120px; } /* Harga */
+.table th:nth-child(8) { width: 80px; }  /* Status */
+.table th:last-child { width: 90px; }    /* Aksi - Reduced width */
+
+/* Action Buttons */
+.table .btn-group {
+    display: flex;
+    gap: 2px; /* Reduced gap */
+}
+
+.table .btn-group .btn {
+    padding: 4px 8px; /* Reduced padding */
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.table .btn-group .btn i {
+    font-size: 14px; /* Smaller icons */
+}
+
+/* Status Badge */
+.badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+/* DataTable Wrapper Styling */
+.dataTables_wrapper {
+    padding: 20px 0;
+}
+
+.dataTables_length {
+    margin-bottom: 20px;
+}
+
+.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.dataTables_length select {
+    margin: 0 8px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+}
+
+.dataTables_info {
+    padding-top: 15px;
+    color: #6c757d;
+}
+
+.dataTables_empty {
+    padding: 40px 15px !important;
+    font-size: 15px;
+    color: #6c757d;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Tool Buttons */
+.btn-group, .btn-single {
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-outline-secondary,
+.btn-primary {
+    height: 100%;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Make all header buttons consistent */
+.card-header .btn {
+    min-height: 38px;
+    font-size: 0.9rem;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .table-responsive {
+        padding: 0 8px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table .btn-group .btn {
+        padding: 3px 6px;
+    }
+
+    .table .btn-group .btn i {
+        font-size: 12px;
+    }
+}
+
+/* Improved DataTable Length Styling */
+.dataTables_length {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.dataTables_length label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.dataTables_length select {
+    width: auto;
+    padding: 0.375rem 2rem 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Checkbox Styling */
+.table input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #dee2e6;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+}
+
+.table input[type="checkbox"]:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.table input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Filter Dropdown Styling */
+.filter-dropdown {
+    min-width: 250px;
+    padding: 1rem !important;
+}
+
+.filter-dropdown .form-label {
+    font-size: 0.9rem;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.filter-dropdown .form-select {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.filter-dropdown .btn {
+    font-size: 0.9rem;
+}
