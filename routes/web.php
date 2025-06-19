@@ -65,6 +65,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['pemilik'])->group(function () {
         // Data Kamar Routes
         Route::resource('datakamar', DatakamarController::class);
+        Route::post('/datakamar/store', [DatakamarController::class, 'store'])->name('datakamar.store');
         Route::get('/tampil-kamar', [DatakamarController::class, 'index'])->name('tampil-kamar');
         Route::get('/datakamar/export/excel', [DatakamarController::class, 'excel'])->name('kamar.excel');
         Route::get('/datakamar/export/pdf', [DatakamarController::class, 'pdf'])->name('kamar.pdf');
@@ -72,6 +73,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Data Penghuni Routes
         Route::resource('datapenghuni', DatapenghuniController::class);
+        Route::post('/datapenghuni/store', [DatapenghuniController::class, 'store'])->name('datapenghuni.store');
         Route::get('/tampil-penghuni', [DatapenghuniController::class, 'index'])->name('tampil-penghuni');
         // Perbaiki nama route export Excel dan PDF
         Route::get('/datapenghuni/export/excel', [DatapenghuniController::class, 'excel'])->name('datapenghuni.export.excel');
@@ -81,6 +83,7 @@ Route::middleware(['auth'])->group(function () {
 
         // Data Pengeluaran Routes
         Route::resource('datapengeluaran', PengeluaranController::class);
+        Route::post('/datapengeluaran/store', [PengeluaranController::class, 'store'])->name('datapengeluaran.store');
         Route::get('/tampil-pengeluaran', [PengeluaranController::class, 'index'])->name('tampil-pengeluaran');
         Route::post('/datapengeluaran/bulk-delete', [PengeluaranController::class, 'bulkDelete'])->name('datapengeluaran.bulk-delete');
         Route::post('jenis-pengeluaran', [PengeluaranController::class, 'storeJenis'])->name('jenis-pengeluaran.store');
