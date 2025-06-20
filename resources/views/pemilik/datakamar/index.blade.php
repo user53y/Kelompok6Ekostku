@@ -216,7 +216,7 @@
                 </h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
-            <form action="{{ route('datakamar.store') }}" method="POST" enctype="multipart/form-data" id="addForm">
+            <form action="https://kelompok6ekostku-production.up.railway.app/datakamar/store" method="POST" enctype="multipart/form-data" id="addForm"  >
                 @csrf
                 <div class="modal-body">
                     @include('pemilik.datakamar.form')
